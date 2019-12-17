@@ -10,6 +10,36 @@ service BlogService {
   };
   rpc FindBlog (FindBlogRequest) returns (FindBlogResponse) {
   }; // return "NOT_FOUND" if blog does not exists
+  rpc updateBlog (UpdateBlogRequest) returns (UpdateBlogResponse) {
+  }; // return "NOT_FOUND" if blog does not exists
+  rpc deleteBlog (DeleteBlogRequest) returns (DeleteBlogResponse) {
+  };
+  rpc listAllBlog (ListBlogRequest) returns (stream ListBlogResponse) {
+  };
+
+}
+
+message Blog {
+  string id = 1;
+  string author_id = 2;
+  string title = 3;
+  string content = 4;
+}
+
+message ListBlogRequest {
+
+}
+
+message ListBlogResponse {
+  Blog blog = 1;
+}
+
+message DeleteBlogRequest {
+  string id = 1;
+}
+
+message DeleteBlogResponse {
+  string id = 1;
 }
 
 message FindBlogRequest {
@@ -19,18 +49,18 @@ message FindBlogResponse {
   Blog blog = 1;
 }
 
-
-message Blog {
-  string id = 1;
-  string author_id = 2;
-  string title = 3;
-  string content = 4;
-}
-
 message CreateBlogRequest {
   Blog blog = 1; // id does not matter
 }
 
 message CreateBlogResponse {
   Blog blog = 1; // id will represent mongoDB data
+}
+
+message UpdateBlogRequest {
+  Blog blog = 1;
+}
+
+message UpdateBlogResponse {
+  Blog blog = 1;
 }

@@ -89,6 +89,99 @@ public final class BlogServiceGrpc {
     return getFindBlogMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.mongo.blog.UpdateBlogRequest,
+      com.proto.mongo.blog.UpdateBlogResponse> getUpdateBlogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "updateBlog",
+      requestType = com.proto.mongo.blog.UpdateBlogRequest.class,
+      responseType = com.proto.mongo.blog.UpdateBlogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.mongo.blog.UpdateBlogRequest,
+      com.proto.mongo.blog.UpdateBlogResponse> getUpdateBlogMethod() {
+    io.grpc.MethodDescriptor<com.proto.mongo.blog.UpdateBlogRequest, com.proto.mongo.blog.UpdateBlogResponse> getUpdateBlogMethod;
+    if ((getUpdateBlogMethod = BlogServiceGrpc.getUpdateBlogMethod) == null) {
+      synchronized (BlogServiceGrpc.class) {
+        if ((getUpdateBlogMethod = BlogServiceGrpc.getUpdateBlogMethod) == null) {
+          BlogServiceGrpc.getUpdateBlogMethod = getUpdateBlogMethod =
+              io.grpc.MethodDescriptor.<com.proto.mongo.blog.UpdateBlogRequest, com.proto.mongo.blog.UpdateBlogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateBlog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.mongo.blog.UpdateBlogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.mongo.blog.UpdateBlogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("updateBlog"))
+              .build();
+        }
+      }
+    }
+    return getUpdateBlogMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.proto.mongo.blog.DeleteBlogRequest,
+      com.proto.mongo.blog.DeleteBlogResponse> getDeleteBlogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "deleteBlog",
+      requestType = com.proto.mongo.blog.DeleteBlogRequest.class,
+      responseType = com.proto.mongo.blog.DeleteBlogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.mongo.blog.DeleteBlogRequest,
+      com.proto.mongo.blog.DeleteBlogResponse> getDeleteBlogMethod() {
+    io.grpc.MethodDescriptor<com.proto.mongo.blog.DeleteBlogRequest, com.proto.mongo.blog.DeleteBlogResponse> getDeleteBlogMethod;
+    if ((getDeleteBlogMethod = BlogServiceGrpc.getDeleteBlogMethod) == null) {
+      synchronized (BlogServiceGrpc.class) {
+        if ((getDeleteBlogMethod = BlogServiceGrpc.getDeleteBlogMethod) == null) {
+          BlogServiceGrpc.getDeleteBlogMethod = getDeleteBlogMethod =
+              io.grpc.MethodDescriptor.<com.proto.mongo.blog.DeleteBlogRequest, com.proto.mongo.blog.DeleteBlogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "deleteBlog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.mongo.blog.DeleteBlogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.mongo.blog.DeleteBlogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("deleteBlog"))
+              .build();
+        }
+      }
+    }
+    return getDeleteBlogMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.proto.mongo.blog.ListBlogRequest,
+      com.proto.mongo.blog.ListBlogResponse> getListAllBlogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "listAllBlog",
+      requestType = com.proto.mongo.blog.ListBlogRequest.class,
+      responseType = com.proto.mongo.blog.ListBlogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.proto.mongo.blog.ListBlogRequest,
+      com.proto.mongo.blog.ListBlogResponse> getListAllBlogMethod() {
+    io.grpc.MethodDescriptor<com.proto.mongo.blog.ListBlogRequest, com.proto.mongo.blog.ListBlogResponse> getListAllBlogMethod;
+    if ((getListAllBlogMethod = BlogServiceGrpc.getListAllBlogMethod) == null) {
+      synchronized (BlogServiceGrpc.class) {
+        if ((getListAllBlogMethod = BlogServiceGrpc.getListAllBlogMethod) == null) {
+          BlogServiceGrpc.getListAllBlogMethod = getListAllBlogMethod =
+              io.grpc.MethodDescriptor.<com.proto.mongo.blog.ListBlogRequest, com.proto.mongo.blog.ListBlogResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "listAllBlog"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.mongo.blog.ListBlogRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.mongo.blog.ListBlogResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("listAllBlog"))
+              .build();
+        }
+      }
+    }
+    return getListAllBlogMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -130,6 +223,27 @@ public final class BlogServiceGrpc {
       asyncUnimplementedUnaryCall(getFindBlogMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void updateBlog(com.proto.mongo.blog.UpdateBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.mongo.blog.UpdateBlogResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateBlogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deleteBlog(com.proto.mongo.blog.DeleteBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.mongo.blog.DeleteBlogResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteBlogMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void listAllBlog(com.proto.mongo.blog.ListBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.mongo.blog.ListBlogResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListAllBlogMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -146,6 +260,27 @@ public final class BlogServiceGrpc {
                 com.proto.mongo.blog.FindBlogRequest,
                 com.proto.mongo.blog.FindBlogResponse>(
                   this, METHODID_FIND_BLOG)))
+          .addMethod(
+            getUpdateBlogMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.mongo.blog.UpdateBlogRequest,
+                com.proto.mongo.blog.UpdateBlogResponse>(
+                  this, METHODID_UPDATE_BLOG)))
+          .addMethod(
+            getDeleteBlogMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.mongo.blog.DeleteBlogRequest,
+                com.proto.mongo.blog.DeleteBlogResponse>(
+                  this, METHODID_DELETE_BLOG)))
+          .addMethod(
+            getListAllBlogMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.proto.mongo.blog.ListBlogRequest,
+                com.proto.mongo.blog.ListBlogResponse>(
+                  this, METHODID_LIST_ALL_BLOG)))
           .build();
     }
   }
@@ -183,6 +318,30 @@ public final class BlogServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getFindBlogMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void updateBlog(com.proto.mongo.blog.UpdateBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.mongo.blog.UpdateBlogResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateBlogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deleteBlog(com.proto.mongo.blog.DeleteBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.mongo.blog.DeleteBlogResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteBlogMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void listAllBlog(com.proto.mongo.blog.ListBlogRequest request,
+        io.grpc.stub.StreamObserver<com.proto.mongo.blog.ListBlogResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getListAllBlogMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -215,6 +374,28 @@ public final class BlogServiceGrpc {
     public com.proto.mongo.blog.FindBlogResponse findBlog(com.proto.mongo.blog.FindBlogRequest request) {
       return blockingUnaryCall(
           getChannel(), getFindBlogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.proto.mongo.blog.UpdateBlogResponse updateBlog(com.proto.mongo.blog.UpdateBlogRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateBlogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.proto.mongo.blog.DeleteBlogResponse deleteBlog(com.proto.mongo.blog.DeleteBlogRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteBlogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.proto.mongo.blog.ListBlogResponse> listAllBlog(
+        com.proto.mongo.blog.ListBlogRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getListAllBlogMethod(), getCallOptions(), request);
     }
   }
 
@@ -251,10 +432,29 @@ public final class BlogServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getFindBlogMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.mongo.blog.UpdateBlogResponse> updateBlog(
+        com.proto.mongo.blog.UpdateBlogRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateBlogMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.mongo.blog.DeleteBlogResponse> deleteBlog(
+        com.proto.mongo.blog.DeleteBlogRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteBlogMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_BLOG = 0;
   private static final int METHODID_FIND_BLOG = 1;
+  private static final int METHODID_UPDATE_BLOG = 2;
+  private static final int METHODID_DELETE_BLOG = 3;
+  private static final int METHODID_LIST_ALL_BLOG = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -280,6 +480,18 @@ public final class BlogServiceGrpc {
         case METHODID_FIND_BLOG:
           serviceImpl.findBlog((com.proto.mongo.blog.FindBlogRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.mongo.blog.FindBlogResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_BLOG:
+          serviceImpl.updateBlog((com.proto.mongo.blog.UpdateBlogRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.mongo.blog.UpdateBlogResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_BLOG:
+          serviceImpl.deleteBlog((com.proto.mongo.blog.DeleteBlogRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.mongo.blog.DeleteBlogResponse>) responseObserver);
+          break;
+        case METHODID_LIST_ALL_BLOG:
+          serviceImpl.listAllBlog((com.proto.mongo.blog.ListBlogRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.mongo.blog.ListBlogResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -344,6 +556,9 @@ public final class BlogServiceGrpc {
               .setSchemaDescriptor(new BlogServiceFileDescriptorSupplier())
               .addMethod(getCreateBlogMethod())
               .addMethod(getFindBlogMethod())
+              .addMethod(getUpdateBlogMethod())
+              .addMethod(getDeleteBlogMethod())
+              .addMethod(getListAllBlogMethod())
               .build();
         }
       }
