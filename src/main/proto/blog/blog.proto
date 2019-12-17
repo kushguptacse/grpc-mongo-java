@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package blog;
+
+option java_multiple_files = true;
+option java_package = "com.proto.mongo.blog";
+
+service BlogService {
+  rpc CreateBlog (CreateBlogRequest) returns (CreateBlogResponse) {
+  };
+  rpc FindBlog (FindBlogRequest) returns (FindBlogResponse) {
+  }; // return "NOT_FOUND" if blog does not exists
+}
+
+message FindBlogRequest {
+  string id = 1;
+}
+message FindBlogResponse {
+  Blog blog = 1;
+}
+
+
+message Blog {
+  string id = 1;
+  string author_id = 2;
+  string title = 3;
+  string content = 4;
+}
+
+message CreateBlogRequest {
+  Blog blog = 1; // id does not matter
+}
+
+message CreateBlogResponse {
+  Blog blog = 1; // id will represent mongoDB data
+}
